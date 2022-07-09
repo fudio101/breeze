@@ -92,6 +92,24 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('home-page')" :active="request()->routeIs('home-page')">
+                {{ __('Home page') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('tourism')" :active="request()->routeIs('tourism')">
+                {{ __('Tourism') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('food')" :active="request()->routeIs('food')">
+                {{ __('Food') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('about-us')" :active="request()->routeIs('about-us')">
+                {{ __('About us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contact-us')" :active="request()->routeIs('contact-us')">
+                {{ __('Contact us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('help')" :active="request()->routeIs('help')">
+                {{ __('Help') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
