@@ -24,7 +24,7 @@
                             <x-label for="price" :value="__('Price')"/>
 
                             <x-input id="price" class="block mt-1 w-full" type="number" name="price"
-                                     :value="old('price')" required autofocus/>
+                                     :value="old('price')" required autofocus min="0"/>
                         </div>
 
                         <div class="flex items-center justify-start mt-4">
