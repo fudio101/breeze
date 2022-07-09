@@ -29,7 +29,7 @@
 
                         <div class="flex items-center justify-start mt-4">
                             <x-button class="ml-3">
-                                {{ __('Log in') }}
+                                {{ __('Save') }}
                             </x-button>
                         </div>
                     </form>
