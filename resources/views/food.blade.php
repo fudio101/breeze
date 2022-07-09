@@ -60,7 +60,7 @@
                                     {{$item->name}}
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{$item->price}}
+                                    {{number_format($item->price, 0, ',', ' ');}}
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <form method="post" action="{{route('food.destroy',$item->id)}}"

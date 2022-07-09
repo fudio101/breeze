@@ -39,9 +39,9 @@ class FoodController extends Controller
      * Store a newly created resource in storage.
      *
      * @param StoreFoodRequest $request
-     * @return Application|Factory|View
+     * @return string
      */
-    public function store(StoreFoodRequest $request): View|Factory|Application
+    public function store(StoreFoodRequest $request): string
     {
         $food = new Food();
         $food->fill([
@@ -50,7 +50,7 @@ class FoodController extends Controller
         ]);
         $food->save();
 
-        return \view('food');
+        return redirect()->route('food');
     }
 
     /**
@@ -91,12 +91,12 @@ class FoodController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Food $food
-     * @return Application|Factory|View
+     * @return string
      */
-    public function destroy(Food $food): View|Factory|Application
+    public function destroy(Food $food): string
     {
         $food->delete();
 
-        return \view('food');
+        return redirect()->route('food');
     }
 }
