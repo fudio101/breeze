@@ -13,7 +13,7 @@ class StoreFoodRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreFoodRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|unique:food,name',
+            'price' => 'required|integer|min:0',
         ];
     }
 }

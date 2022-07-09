@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,9 +31,11 @@ Route::middleware('auth')->group(function () {
         return view('tourism');
     })->name('tourism');
 
-    Route::get('/food', function () {
-        return view('food');
-    })->name('food');
+    Route::prefix('food')->group( function () {
+        Route::get('/', [FoodController::class, 'index'])->name('food');
+        Route::post('/store', [FoodController::class, 'store'])->name('food.store');
+        Route::post('/destroy/{food}', [FoodController::class, 'destroy'])->name('food.destroy');
+    });
 
     Route::get('/about-us', function () {
         return view('about-us');
@@ -45,7 +48,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/help', function () {
         return view('help');
     })->name('help');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
